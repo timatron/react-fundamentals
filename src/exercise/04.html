@@ -7,16 +7,31 @@
   <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
-    // 🐨 Make a function called `message` which returns the JSX we want to share
+    
+    // Exercise 4.0
+    // const element = (
+    //   <div className="container">
+    //     {message({children: 'Hello World'})}
+    //     {message({children: 'Goodbye World'})}
+    //   </div>
+    // )
 
-    // 🐨 use that function in place of the divs below with:
-    // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
-    const element = (
-      <div className="container">
-        <div className="message">Hello World</div>
-        <div className="message">Goodbye World</div>
-      </div>
-    )
+    // function message(props) {
+    //   return <div {...props}/>;
+    // }
+
+    // Exercise 4.1
+    // function message(props) {
+    //   return <div {...props}/>;
+    // }
+    // element = React.createElement(message, {children: 'Hello World'});
+
+    // Exercise 4.2
+    function Message(props) {
+      return <div {...props}/>;
+    }
+    element = React.createElement(Message, {children: 'Hello World'});
+
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.render(element, document.getElementById('root'))
